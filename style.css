@@ -1,0 +1,123 @@
+/* Main/Darker Puple: #311d3f
+Lighter purple : #4C2662 
+ */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  /* font-size: 10px; */
+  /* 10px / 16px = 0.625 = 62.5% */
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  color: #4c2662;
+  overflow-x: hidden;
+}
+
+/* HEADER */
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: none;
+
+  height: 14rem;
+  padding: 0 4.8rem;
+  position: relative;
+}
+
+.logo {
+  height: 14rem;
+}
+
+.container {
+  padding: 0 12rem;
+  font-family: sans-serif;
+  color: #311d3f;
+  font-size: 24px;
+  height: 100vh;
+  text-align: center;
+  font-weight: bold;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 150px 1fr;
+}
+
+/* .menu, */
+section,
+main,
+aside {
+  padding: 24px;
+}
+
+.menu {
+  background-color: #4c266290;
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+  grid-template-columns: 1fr 50px;
+  gap: 12px;
+  padding: 10px;
+}
+
+button {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #4c2662;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  padding: 8px 12px;
+}
+
+button:last-child {
+  background-color: #311d3f;
+  margin-right: auto;
+}
+
+aside {
+  background-color: #4c26622e;
+}
+
+.instructions {
+  align-items: flex-start;
+}
+
+h1 {
+  margin-bottom: 2.4rem;
+}
+
+.feedback-paragraph {
+  flex-shrink: 0;
+  display: flex;
+  padding: 2.4rem;
+  height: 1fr;
+  background-color: #fff;
+
+  text-decoration: none;
+  line-height: 1;
+  font-weight: 400;
+  font-size: 2.4rem;
+  text-align: left;
+}
+
+p {
+  font-size: 16px;
+}
+
+.paragraph {
+  padding: 20px 20px;
+  text-align: left;
+  width: 700px;
+}

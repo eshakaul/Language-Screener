@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>Language Screener</title>
+  </head>
+  <body>
+    <header class="header">
+      <img class="logo" alt="Language Checker logo" src="../img/logo.png" />
+    </header>
+
+    <section class="container">
+      <div class="menu">
+        <div class="instructions">
+          <h3 class="directions">How to Use the Language Checker:</h3>
+            <p class="paragraph">
+              Upload a pdf of text, and click the dark purple "Check Language" button to the right. In the feedback section below, your message will appear with the correct grammar along with a numbered list of your grammar mistakes and details on why it is incorrect.
+            </p>
+        </div>
+        <menu>
+          <input id="file" type="file" />
+          <button onclick="Scan()">Check Language</button>
+        </menu>
+      </div>
+      <aside>
+        <h1>Feedback</h1>
+        <p class="feedback-paragraph" id="feedback"></p>
+      </aside>
+    </section>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+      function Scan() {
+        let formData = new FormData();
+        formData.append("file", document.getElementById("file").files[0]);
+        axios
+          .post("http://127.0.0.1:5000/feedback", formData, {
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
+          })
+          .then((res) => {
+            console.log(res.data);
+            document.getElementById("feedback").innerText = res.data;
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      }
+    </script>
+    </section>
+  </body>
+</html>
